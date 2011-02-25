@@ -32,7 +32,7 @@ require_once('lib/misc.php');
 		
 		<?php tpl_metaheaders(); ?>
 		
-		<link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
+		<link rel="shortcut icon" href="<?php echo DOKU_TPL; ?>images/favicon.ico" />
 		
 		<?php oldIncludeHook('meta'); ?>
 	</head>
@@ -47,10 +47,10 @@ require_once('lib/misc.php');
 			<div class="stylehead">
 				<div class="header">
 					<div class="pagename">
-						[[<?php tpl_link(wl($ID,'do=backlink'),tpl_pagetitle($ID,true),'title="'.$lang['btn_backlink'].'"')?>]]
+						<?php echoPagename(); ?>
 					</div>
 					<div class="logo">
-						<?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]"')?>
+						<?php echoLogo(); ?>
 					</div>
 					<div class="clearer"></div>
 				</div>
@@ -59,30 +59,46 @@ require_once('lib/misc.php');
 				
 				<div class="bar" id="bar__top">
 					<div class="bar-left" id="bar__topleft">
-						<?php tpl_button('edit')?><?php tpl_button('history')?>
+						<?php tpl_button('edit'); ?>
+						<?php tpl_button('history'); ?>
 					</div>
 					<div class="bar-right" id="bar__topright">
-						<?php tpl_button('recent')?><?php tpl_searchform()?>&nbsp;
+						<?php tpl_button('recent'); ?>
+						<?php tpl_searchform(); ?>
+						&nbsp;
 					</div>
 					<div class="clearer"></div>
-				</div><?php if($conf['breadcrumbs']){?>
+				</div>
+				
+				<?php if($conf['breadcrumbs']): ?>
 				<div class="breadcrumbs">
-					<?php tpl_breadcrumbs()?><?php //tpl_youarehere() //(some people prefer this)?>
-				</div><?php }?><?php if($conf['youarehere']){?>
+					<?php tpl_breadcrumbs()?>
+					<?php //tpl_youarehere() //(some people prefer this)?>
+				</div>
+				<?php endif; ?>
+					
+				<?php if($conf['youarehere']): ?>
 				<div class="breadcrumbs">
 					<?php tpl_youarehere() ?>
-				</div><?php }?>
-			</div><?php tpl_flush()?>
+				</div>
+				<?php endif; ?>
 				
+			</div>
+			
+			<?php tpl_flush()?>	
 			<?php oldIncludeHook('pageheader'); ?>
 			
 			<div class="page">
 				<!-- wikipage start -->
-				<?php tpl_content()?><!-- wikipage stop -->
+				<?php tpl_content()?>
+				<!-- wikipage stop -->
 			</div>
 			<div class="clearer">
 				&nbsp;
-			</div><?php tpl_flush()?>
+			</div>
+			
+			<?php tpl_flush()?>
+			
 			<div class="stylefoot">
 				<div class="meta">
 					<div class="user">
@@ -97,10 +113,17 @@ require_once('lib/misc.php');
 				
 				<div class="bar" id="bar__bottom">
 					<div class="bar-left" id="bar__bottomleft">
-						<?php tpl_button('edit')?><?php tpl_button('history')?><?php tpl_button('revert')?>
+						<?php tpl_button('edit'); ?>
+						<?php tpl_button('history'); ?>
+						<?php tpl_button('revert'); ?>
 					</div>
 					<div class="bar-right" id="bar__bottomright">
-						<?php tpl_button('subscribe')?><?php tpl_button('admin')?><?php tpl_button('profile')?><?php tpl_button('login')?><?php tpl_button('index')?><?php tpl_button('top')?>&nbsp;
+						<?php tpl_button('subscribe'); ?>
+						<?php tpl_button('admin'); ?>
+						<?php tpl_button('profile'); ?>
+						<?php tpl_button('login'); ?>
+						<?php tpl_button('index'); ?>
+						<?php tpl_button('top'); ?>&nbsp;
 					</div>
 					<div class="clearer"></div>
 				</div>
