@@ -35,7 +35,7 @@ require_once('lib/misc.php');
 		
 		<?php oldIncludeHook('meta'); ?>
 	</head>
-	<body>
+	<body class="dw-left">
 		
 		<?php oldIncludeHook('topheader'); ?>
 		
@@ -43,7 +43,9 @@ require_once('lib/misc.php');
 			<?php oldIncludeHook('menu'); ?>
 			
 			<?php html_msgarea()?>
-			
+		</div>
+		
+		<div id="wrapper" class="dokuwiki">
 			<?php oldIncludeHook('content'); ?>
 		</div>
 		
