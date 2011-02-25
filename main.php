@@ -32,7 +32,7 @@ require_once('lib/misc.php');
 		
 		<?php tpl_metaheaders(); ?>
 		
-		<link rel="shortcut icon" href="%3C?php%20echo%20DOKU_TPL?%3Eimages/favicon.ico" />
+		<link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
 		
 		<?php oldIncludeHook('meta'); ?>
 	</head>
