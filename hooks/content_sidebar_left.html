@@ -1,0 +1,23 @@
+<div class="left-sidebar">
+	<div class="menu">
+		<?php //render_navigation(":menu"); ?>
+	</div><?php //tpl_sidebar('left'); ?>
+</div>
+<div class="right-page">
+	<div id="page">
+		<h1>
+			<?php echoPagename(); ?>
+		</h1>
+		
+		<?php ($notoc) ? tpl_content(false) : tpl_content() ?>
+		
+		<div class="meta">
+			<div class="user">
+				<?php tpl_userinfo()?>
+			</div>
+			<div class="doc">
+				<?php tpl_pageinfo()?>
+			</div>
+		</div>
+	</div>
+</div>

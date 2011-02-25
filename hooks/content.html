@@ -1,0 +1,9 @@
+<?php
+	if(tpl_getConf('sidebar') === 'none') {
+		oldIncludeHook('content_sidebar_none');
+	} elseif(tpl_getConf('sidebar') == 'right') {
+		oldIncludeHook('content_sidebar_right');
+	} else {
+		oldIncludeHook('content_sidebar_left');
+	}
+?>

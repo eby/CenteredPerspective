@@ -1,0 +1,10 @@
+<div class="left-page">
+	<div id="page">
+		<?php ($notoc) ? tpl_content(false) : tpl_content() ?>
+	</div>
+</div>
+<div class="right-sidebar">
+	<div class="menu">
+		<?php render_navigation(":menu");?>
+	</div><?php tpl_sidebar('right') ?>
+</div>
